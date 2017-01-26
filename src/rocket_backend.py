@@ -97,7 +97,8 @@ class OriginalRocketLauncher:
 				raise e
 
 
-#		self.handle.setConfiguration(dev.configurations[0])
+		# Throws: sb.core.USBError: [Errno 16] Resource busy
+		# self.handle.setConfiguration(dev.configurations[0])
 
 		try:
 			self.handle.claimInterface( 0 )
@@ -106,7 +107,8 @@ class OriginalRocketLauncher:
 				self.handle.detachKernelDriver( 0 )
 				self.handle.claimInterface( 0 )
 
-		self.handle.setAltInterface(0)
+		# Throws: sb.core.USBError: [Errno 16] Resource busy
+		# self.handle.setAltInterface(0)
 
 		return 0
 
